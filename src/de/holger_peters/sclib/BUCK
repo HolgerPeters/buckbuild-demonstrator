@@ -1,0 +1,10 @@
+scala_library(
+  name = 'multiplier',
+  visibility = ["PUBLIC"],
+  srcs = ['Multiplier.scala'],
+  deps = [
+	  '//third_party/scala:scala-compiler',
+	  '//third_party/scala:scala-library',
+	  '//third_party/scala:scala-reflect',
+  ],
+)

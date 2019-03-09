@@ -1,0 +1,18 @@
+
+python_test(
+  name = 'test-median-calculator-numpy',
+  srcs = ['test_median_numpy.py'],
+  platform = 'py3',
+  deps = [
+    '//src/numerics:median-calculator-lib-numpy',
+  ],
+)
+
+python_test(
+  name = 'test-median-calculator-stdlib',
+  srcs = ['test_median_stdlib.py'],
+  platform = 'py3',
+  deps = [
+    '//src/numerics:median-calculator-lib-stdlib',
+  ],
+)

@@ -1,0 +1,35 @@
+
+remote_file(
+    name = 'junit-jar',
+    out = 'junit.jar',
+    url = 'mvn:junit:junit:jar:4.12',
+    sha1 = '2973d150c0dc1fefe998f834810d68f278ea58ec',
+)
+
+
+prebuilt_jar(
+    name = "junit",
+    binary_jar = ":junit-jar",
+    javadoc_url = "http://junit-team.github.io/junit/javadoc/latest/",
+    licenses = [
+        "LICENSE-junit.txt",
+    ],
+    visibility = [
+        "PUBLIC",
+    ],
+    deps = [
+        "//third_party/hamcrest:hamcrest-junit",
+    ],
+)
+
+prebuilt_jar(
+    name = "junit-no-hamcrest",
+    binary_jar = ":junit-jar",
+    javadoc_url = "http://junit-team.github.io/junit/javadoc/latest/",
+    licenses = [
+        "LICENSE-junit.txt",
+    ],
+    visibility = [
+        "PUBLIC",
+    ],
+)

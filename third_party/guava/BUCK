@@ -1,0 +1,12 @@
+remote_file(
+    name = 'guava-source',
+    out = 'guava.jar',
+    url = 'mvn:com.google.guava:guava:jar:27.0.1-jre',
+    sha1 = 'bd41a290787b5301e63929676d792c507bbc00ae',
+)
+
+prebuilt_jar(
+    name = 'guava',
+    binary_jar = ':guava-source',
+    visibility = ['PUBLIC'],
+)

@@ -1,0 +1,15 @@
+
+http_file(
+    name = 'numpy-whl',
+    out = 'numpy-1.16.2-cp37-cp37m-macosx_10_6_intel.macosx_10_9_intel.macosx_10_9_x86_64.macosx_10_10_intel.macosx_10_10_x86_64.whl',
+    urls = [
+	    'https://files.pythonhosted.org/packages/a6/6f/cb20ccd8f0f8581e0e090775c0e3c3e335b037818416e6fa945d924397d2/numpy-1.16.2-cp37-cp37m-macosx_10_6_intel.macosx_10_9_intel.macosx_10_9_x86_64.macosx_10_10_intel.macosx_10_10_x86_64.whl'
+    ],
+    sha256 = '80a41edf64a3626e729a62df7dd278474fc1726836552b67a8c6396fd7e86760',
+)
+
+prebuilt_python_library(
+  name = 'numpy',
+  binary_src = ':numpy-whl',
+  visibility = ["PUBLIC"],
+)

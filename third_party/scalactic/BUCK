@@ -1,0 +1,12 @@
+remote_file(
+    name = 'scalactic-source',
+    out = 'scalactic.jar',
+    url = 'mvn:org.scalactic:scalactic_2.12:jar:3.2.0-SNAP10',
+    sha1 = '1f877bb26bc7ce3881fd7363932be4cc861bf829',
+)
+
+prebuilt_jar(
+    name = 'scalactic',
+    binary_jar = ':scalactic-source',
+    visibility = ['PUBLIC'],
+)

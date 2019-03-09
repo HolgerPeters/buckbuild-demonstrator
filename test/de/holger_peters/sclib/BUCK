@@ -1,0 +1,10 @@
+scala_test(
+  name = 'sclib-test',
+  srcs = ['MultiplierSpec.scala'],
+  deps = [
+     '//src/de/holger_peters/sclib:multiplier',
+     '//third_party/scalatest:scalatest',
+     '//third_party/scalactic:scalactic',
+     '//third_party/junit:junit',
+  ],
+)

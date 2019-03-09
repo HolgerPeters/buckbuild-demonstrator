@@ -1,0 +1,15 @@
+remote_file(
+    name = 'scalatest-source',
+    out = 'scalatest.jar',
+    url = 'mvn:org.scalatest:scalatest_2.12:jar:3.2.0-SNAP10',
+    sha1 = '4d9868f3d2b4c019d66b6c7fa22a52637d9df74f',
+)
+
+prebuilt_jar(
+    name = 'scalatest',
+    binary_jar = ':scalatest-source',
+    visibility = ['PUBLIC'],
+    deps = [
+      '//third_party/scala:scala-xml'
+    ]
+)

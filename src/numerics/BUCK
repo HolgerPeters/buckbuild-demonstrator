@@ -1,0 +1,33 @@
+
+
+python_binary(
+  name = 'median-calculator-cli',
+  main_module = 'src.numerics.median_calculator',
+  platform = 'py3',
+  deps = [
+    ':median-calculator-lib-numpy',
+    ':median-calculator-lib-stdlib',
+  ],
+)
+
+
+
+python_library(
+  name = 'median-calculator-lib-numpy',
+  srcs = ['median_calculator.py', 'numpy_based_lib.py'],
+  deps = [
+	  "//third_party/python:numpy"
+  ],
+  visibility = [
+	  '//test/numerics:test-median-calculator-numpy'
+  ]
+)
+
+python_library(
+  name = 'median-calculator-lib-stdlib',
+  srcs = ['stdlib_based_lib.py'],
+  deps = [ ],
+  visibility = [
+	  '//test/numerics:test-median-calculator-stdlib'
+  ]
+)

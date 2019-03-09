@@ -1,0 +1,11 @@
+
+[download]
+    in_build = true
+    maven_repo = http://central.maven.org/maven2/
+
+[scala]
+    compiler = //third_party/scala:scala-compiler
+    library = //third_party/scala:scala-library
+
+[python#py3]
+  interpreter = python3.7

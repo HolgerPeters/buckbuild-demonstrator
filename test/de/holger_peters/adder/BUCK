@@ -1,0 +1,11 @@
+
+java_test(
+  name = 'app-test',
+  srcs = glob(['AppTest.java']),
+  deps = [
+     '//src/de/holger_peters/app:app-lib',
+     '//third_party/junit:junit',
+     '//third_party/hamcrest:hamcrest-junit',
+     '//third_party/hamcrest:java-hamcrest'
+  ],
+)

@@ -1,0 +1,19 @@
+java_binary(
+  name = 'app',
+  main_class='de.holger_peters.app.App',
+  deps = [
+    ':app-lib',
+    '//src/de/holger_peters/adder:adder'
+  ],
+)
+
+java_library(
+  name = 'app-lib',
+  visibility = ["PUBLIC"],
+  srcs = ['App.java'],
+  deps = [
+    '//third_party/guava:guava',
+    '//src/de/holger_peters/adder:adder',
+    '//src/de/holger_peters/sclib:multiplier',
+  ],
+)
